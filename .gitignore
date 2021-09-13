@@ -50,3 +50,7 @@ modules.order
 Module.symvers
 Mkfile.old
 dkms.conf
+
+# pkg files
+power_1.0_amd64
+*.deb
