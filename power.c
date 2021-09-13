@@ -1,6 +1,6 @@
 /*
 power.c
-Gtk-3 GUI for "shutdown", "restart", "cancel"
+Gtk-3 GUI for "shutdown", "restart", "suspend", cancel"
 */
 
 #include <stdio.h>
