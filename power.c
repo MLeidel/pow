@@ -2,7 +2,7 @@
 power.c
 Gtk-3 GUI for "shutdown", "restart", "suspend", cancel"
 */
-
+#include <myc.h>
 #include <stdio.h>
 #include <string.h>
 #include <gtk/gtk.h>
@@ -126,6 +126,15 @@ void on_btn_suspend_clicked() {
     gtk_main_quit();
 }
 
+void timeout_hand() {
+    /*
+    By default after 6 second timeout from launch
+    the shutdown is called.
+    */
+    on_btn_shutdown_clicked();
+}
+
+
 int main(int argc, char *argv[]) {
     GtkBuilder      *builder;
     GtkWidget       *window;
@@ -142,6 +151,13 @@ int main(int argc, char *argv[]) {
     g_object_unref(builder);
 
     gtk_widget_show(window);
+
+    /*
+    By default 6 seconds after launch
+        the shutdown is called.
+    */
+    timeout(6, timeout_hand);
+
     gtk_main();
 
     return 0;
